@@ -10,7 +10,7 @@ This app will demonstrate how to...
 
 ## Getting started
 
-Clone this repository to your computer. You can do this with GitHub for Mac, GitHub for Windows, or the Git command-line client.
+Clone this repository to your computer. You can do this with [GitHub for Mac](https://mac.github.com), [GitHub for Windows](https://windows.github.com), or the [Git command-line client](http://www.git-scm.com).
 
 ```bash
 git clone https://github.com/codeguy/oscon-modern-php.git
