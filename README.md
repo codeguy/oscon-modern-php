@@ -8,7 +8,16 @@ This app will demonstrate how to...
 * [VirtualBox](https://www.virtualbox.org)
 * [Vagrant](https://www.vagrantup.com)
 
-## Getting started
+## Before OSCON
+
+* Install system requirements
+* Download the `codeguy/php` Vagrant box with this bash command:
+
+```bash
+vagrant box add codeguy/php
+```
+
+## During OSCON
 
 Clone this repository to your computer. You can do this with [GitHub for Mac](https://mac.github.com), [GitHub for Windows](https://windows.github.com), or the [Git command-line client](http://www.git-scm.com).
 
