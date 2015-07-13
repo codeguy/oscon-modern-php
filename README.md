@@ -5,8 +5,8 @@ This app will demonstrate how to...
 ## System requirements
 
 * Git client
-* VirtualBox
-* Vagrant
+* [VirtualBox](https://www.virtualbox.org)
+* [Vagrant](https://www.vagrantup.com)
 
 ## Getting started
 
