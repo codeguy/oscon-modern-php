@@ -1,0 +1,18 @@
+CREATE TABLE `bookmarks` (
+    `id`         INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `title`      VARCHAR(255),
+    `caption`    TEXT,
+    `image`      VARCHAR(255),
+    `url`        VARCHAR(255),
+    `created_at` DATETIME,
+
+    PRIMARY KEY (`id`)
+) ENGINE=INNODB DEFAULT CHARSET=UTF8 COLLATE=UTF8_UNICODE_CI;
+
+CREATE TABLE `users` (
+    `id`       INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `username` VARCHAR(255),
+    `password` VARCHAR(255),
+
+    PRIMARY KEY (`id`)
+) ENGINE=INNODB DEFAULT CHARSET=UTF8 COLLATE=UTF8_UNICODE_CI;
