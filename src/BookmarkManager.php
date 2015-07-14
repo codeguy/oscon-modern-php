@@ -35,11 +35,24 @@ class BookmarkManager
                'VALUES (:title, :caption, :image, :url, NOW())';
         $stmt = $this->pdo->prepare($sql);
 
+        // Use anonymous function to sanitize foreign input
+        $clean = function ($raw) {
+            return filter_var(
+                $raw,
+                FILTER_SANITIZE_STRING,
+                FILTER_FLAG_STRIP_LOW
+            );
+        };
+        $title = $clean($bookmark->getTitle());
+        $caption = $clean($bookmark->getCaption());
+        $image = $clean($bookmark->getImage());
+        $url = $clean($bookmark->getUrl());
+
         // Bind values to prepared statement
-        $stmt->bindValue(':title', $bookmark->getTitle());
-        $stmt->bindValue(':caption', $bookmark->getCaption());
-        $stmt->bindValue(':image', $bookmark->getImage());
-        $stmt->bindValue(':url', $bookmark->getUrl());
+        $stmt->bindValue(':title', $title);
+        $stmt->bindValue(':caption', $caption);
+        $stmt->bindValue(':image', $image);
+        $stmt->bindValue(':url', $url);
 
         // Execute statement and return result
         return $stmt->execute();
