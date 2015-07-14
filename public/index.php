@@ -1,6 +1,14 @@
 <?php
 require dirname(__DIR__) . '/bootstrap.php';
 
+session_start();
+
+if (!isset($_SESSION['loggedIn'])) {
+    header('HTTP/1.1 302 Redirect');
+    header('Location: /login.php');
+    exit;
+}
+
 $manager = new \App\BookmarkManager($pdo);
 $bookmarks = $manager->getBookmarks();
 ?>
@@ -47,6 +55,10 @@ $bookmarks = $manager->getBookmarks();
             <?php else: ?>
             <p>You don't have any bookmarks yet.</p>
             <?php endif; ?>
+
+            <p>
+                <a href="/logout.php">Log Out</a>
+            </p>
         </div>
     </body>
 </html>
